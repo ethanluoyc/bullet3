@@ -8,6 +8,8 @@ class ReacherBulletEnv(MJCFBaseBulletEnv):
 	def __init__(self):
 		self.robot = Reacher()
 		MJCFBaseBulletEnv.__init__(self, self.robot)
+		self.camera.pitch = 90
+		self.camera.dist = 0.5
 
 	def create_single_player_scene(self):
 		return SingleRobotEmptyScene(gravity=0.0, timestep=0.0165, frame_skip=1)
